@@ -3,7 +3,7 @@ package com.campus.restaurante.web.controller;
 import com.campus.restaurante.domain.repository.UserRepository;
 import com.campus.restaurante.domain.security.JWTAuthtenticationConfig;
 import com.campus.restaurante.domain.service.UserServiceImpl;
-import com.campus.restaurante.dto.CreateUserDto;
+import com.campus.restaurante.dto.CreateUserDTO;
 import com.campus.restaurante.dto.LoginDto;
 import com.campus.restaurante.dto.UserDto;
 import com.campus.restaurante.persistence.entity.Users;
@@ -63,7 +63,7 @@ public class LoginController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody CreateUserDto createUserDTO) {
+    public ResponseEntity<?> register(@RequestBody CreateUserDTO createUserDTO) {
         try {
             // Encriptar la contraseña
             String encryptedPassword = passwordEncoder.encode(createUserDTO.getPassword());

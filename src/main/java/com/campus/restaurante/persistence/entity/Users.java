@@ -114,8 +114,8 @@ public class Users {
 
     // ----------------- DTOS
 
-    public CreateUserDto toDTOCreate() {
-        CreateUserDto createUserDTO = new CreateUserDto();
+    public CreateUserDTO toDTOCreate() {
+        CreateUserDTO createUserDTO = new CreateUserDTO();
         createUserDTO.setName(this.name);
         createUserDTO.setEmail(this.email);
         createUserDTO.setPassword(this.password);
@@ -123,7 +123,7 @@ public class Users {
 
     }
 
-    public  static  Users fromDTOCreate( CreateUserDto createUserDTO){
+    public  static  Users fromDTOCreate( CreateUserDTO createUserDTO){
         Users user = new Users();
         user.setName(createUserDTO.getName());
         user.setEmail(createUserDTO.getEmail());

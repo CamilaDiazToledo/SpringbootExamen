@@ -1,6 +1,6 @@
 package com.campus.restaurante.domain.service;
 
-import com.campus.restaurante.dto.CreateUserDto;
+import com.campus.restaurante.dto.CreateUserDTO;
 import com.campus.restaurante.dto.UserDto;
 import org.springframework.http.ResponseEntity;
 
@@ -9,7 +9,7 @@ import java.util.List;
 public interface UserService {
 
     ResponseEntity<UserDto> findByEmailToCreate(String email);
-    ResponseEntity<UserDto>createUser(CreateUserDto createUserDto);
+    ResponseEntity<UserDto>createUser(CreateUserDTO createUserDto);
 
     ResponseEntity<UserDto>findByEmail(String email);
 

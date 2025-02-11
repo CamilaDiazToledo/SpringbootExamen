@@ -4,8 +4,7 @@
  */
 package com.campus.restaurante.persistence.entity;
 
-import com.campus.restaurante.dto.CreateProductDTO;
-import com.campus.restaurante.dto.CreateUserDto;
+import com.campus.restaurante.dto.CreateUserDTO;
 import com.campus.restaurante.dto.ProductsDTO;
 import com.campus.restaurante.dto.UserDto;
 import jakarta.persistence.*;
@@ -79,23 +78,7 @@ public class Products {
 
     // ----------------- DTOS
 
-    public CreateProductDTO toDTOCreate() {
-        CreateProductDTO createProductDto = new CreateProductDTO();
-        createProductDto.setName(this.name);
-        createProductDto.setPrice(this.price);
-        createProductDto.setDetails(this.details);
-        createProductDto.setDetails(this.details);
-        return createProductDto;
 
-    }
-
-    public  static  Products fromDTOCreate( CreateProductDTO createProductDto){
-        Products product = new Products();
-        product.setName(createProductDto.getName());
-        product.setPrice(createProductDto.getPrice());
-        product.setDetails(createProductDto.getDetails());
-        return  product;
-    }
     public ProductsDTO toDTO() {
         ProductsDTO productsDTO = new ProductsDTO();
 

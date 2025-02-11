@@ -1,7 +1,7 @@
 package com.campus.restaurante.domain.service;
 
 import com.campus.restaurante.domain.repository.UserRepository;
-import com.campus.restaurante.dto.CreateUserDto;
+import com.campus.restaurante.dto.CreateUserDTO;
 import com.campus.restaurante.dto.UserDto;
 import com.campus.restaurante.persistence.entity.Users;
 import com.campus.restaurante.web.exceptions.DataInUseException;
@@ -35,7 +35,7 @@ public class UserServiceImpl  implements UserService {
 
     @Transactional
     @Override
-    public ResponseEntity<UserDto> createUser(CreateUserDto createUserDTO) {
+    public ResponseEntity<UserDto> createUser(CreateUserDTO createUserDTO) {
         //validacion email
         ResponseEntity<UserDto> userResponse = findByEmailToCreate(createUserDTO.getEmail());
         if (userResponse.getStatusCode().is2xxSuccessful()) {
