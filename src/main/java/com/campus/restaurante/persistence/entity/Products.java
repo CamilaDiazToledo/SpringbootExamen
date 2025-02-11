@@ -4,6 +4,9 @@
  */
 package com.campus.restaurante.persistence.entity;
 
+import com.campus.restaurante.dto.CreateUserDto;
+import com.campus.restaurante.dto.ProductsDTO;
+import com.campus.restaurante.dto.UserDto;
 import jakarta.persistence.*;
 
 @Entity
@@ -71,5 +74,20 @@ public class Products {
 
     public void setOrderProduct(OrderProduct orderProduct) {
         this.orderProduct = orderProduct;
+    }
+
+    // ----------------- DTOS
+
+
+    public ProductsDTO toDTO() {
+        ProductsDTO productsDTO = new ProductsDTO();
+
+        productsDTO.setName(this.name);
+
+        productsDTO.setPrice(this.price);
+
+        productsDTO.setDetails(this.details);
+
+        return productsDTO;
     }
 }
