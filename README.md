@@ -69,9 +69,9 @@ Para cualquier contribución, por favor sigue las normas del repositorio y aseg�
 
 
 ## ✒️ Autores
-- **Backend**: 
-- **Frontend**:
-- **Integracion**:
+- **Backend**: Camila Toledo
+- **Frontend**: Adrian Ortiz
+- **Integracion**: Santiago Santacruz
 
 
 
