@@ -2,7 +2,9 @@ package com.campus.restaurante.web.controller;
 
 import com.campus.restaurante.domain.repository.UserRepository;
 import com.campus.restaurante.domain.security.JWTAuthtenticationConfig;
+import com.campus.restaurante.dto.CreateUserDto;
 import com.campus.restaurante.dto.LoginDto;
+import com.campus.restaurante.dto.UserDto;
 import com.campus.restaurante.persistence.entity.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +37,7 @@ public class LoginController {
 
         try {
 
-            Optional<Users> user = userRepositorty.findByEmail(email); //SE USARIA EL IMPL
+            Optional<Users> user = userRepositorty.findByEmail(email);
             if (passwordEncoder.matches(encryptedPass, user.get().getPassword())) {
 
                 String token = jwtAuthtenticationConfig.getJWTToken(email);

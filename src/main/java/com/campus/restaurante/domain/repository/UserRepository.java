@@ -3,6 +3,8 @@ package com.campus.restaurante.domain.repository;
 import com.campus.restaurante.persistence.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<Users, Long> {
+import java.util.Optional;
 
+public interface UserRepository extends JpaRepository<Users, Long> {
+    public Optional<Users> findByEmail(String email);
 }
