@@ -4,7 +4,7 @@
  */
 package com.campus.restaurante.persistence.entity;
 
-import com.campus.restaurante.dto.CreateUserDTO;
+import com.campus.restaurante.dto.CreateUserDto;
 import com.campus.restaurante.dto.ProductsDTO;
 import com.campus.restaurante.dto.UserDto;
 import jakarta.persistence.*;

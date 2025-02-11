@@ -1,6 +1,6 @@
 package com.campus.restaurante.persistence.entity;
 
-import com.campus.restaurante.dto.CreateUserDTO;
+import com.campus.restaurante.dto.CreateUserDto;
 import com.campus.restaurante.dto.UserDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -61,8 +61,8 @@ public class Admin {
 
     // ----------------- DTOS
 
-    public CreateUserDTO toDTOCreate() {
-        CreateUserDTO createUserDTO = new CreateUserDTO();
+    public CreateUserDto toDTOCreate() {
+        CreateUserDto createUserDTO = new CreateUserDto();
         createUserDTO.setName(this.name);
         createUserDTO.setEmail(this.email);
         createUserDTO.setPassword(this.password);
@@ -70,7 +70,7 @@ public class Admin {
 
     }
 
-    public  static  Admin fromDTOCreate( CreateUserDTO createUserDTO){
+    public  static  Admin fromDTOCreate( CreateUserDto createUserDTO){
         Admin user = new Admin();
         user.setName(createUserDTO.getName());
         user.setEmail(createUserDTO.getEmail());
