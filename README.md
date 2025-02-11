@@ -1,4 +1,4 @@
-# 🚀Restaurante donde Lucho
+# 🚀Restaurante
 
 Este es un software para un restaurante, tiene odjetivo es brindar a los usuarios que accedan a una plataforma interactiva y dinamica donde se pueda crear ordenes al restaurante
 y este las tomará para realizar el pedido y poder modificar el estado segun la entrega del pedido
@@ -25,7 +25,7 @@ Este software esta desarrollado con un stack tecnologico solido que garantiza su
 ### 📊 Diagrama UML
 
 
-![Diagrama UML]()
+![Diagrama UML](ER_DiagramRes.png)
 
 
 ## 📥 Instalación y configuración
@@ -64,7 +64,7 @@ Para cualquier contribución, por favor sigue las normas del repositorio y aseg�
 
 
 ## ✨Link FrontEnd
-[Link para ver el repositorio Frontend](http://nada.com)
+[Link para ver el repositorio Frontend](https://github.com/Adrian-ortiz0/frontend_restaurant)
 
 
 
