@@ -28,7 +28,6 @@ Este software esta desarrollado con un stack tecnologico solido que garantiza su
 ![Diagrama UML]()
 
 
-
 ## 📥 Instalación y configuración
 Si deseas ejecutar el  en tu entorno local, sigue estos pasos detallados:
 
@@ -44,6 +43,14 @@ Si deseas ejecutar el  en tu entorno local, sigue estos pasos detallados:
    ```
 5. 🌐 Abrir el archivo `index.html` en un navegador para visualizar el frontend y comenzar a interactuar con la aplicación.
 
+## 🏆 Modo de Uso
+Se debe clonar el repositorio como antes indicado y la hora de ejecutar este proyecto se debe tener en cuenta:
+ - Descargar la ultima version del repositorio
+ - Que la base de datos este creada
+ - Tener Spring boot configurado
+ - Verificar que en Properties esté el usuario y la contraseña correctamente configurados
+ - verificar el puerto en el cual se ejecuta, (Que no esté siendo utilizado este puerto) 
+ - Correr desde Aplication
 
 ## 🤝 Contribuciones
 Si deseas contribuir a este software, ¡eres más que bienvenido! Puedes ayudar de las siguientes maneras:
@@ -56,8 +63,13 @@ Si deseas contribuir a este software, ¡eres más que bienvenido! Puedes ayudar 
 Para cualquier contribución, por favor sigue las normas del repositorio y asegúrate de documentar bien los cambios realizados.
 
 
+## ✨Link FrontEnd
+[Link para ver el repositorio Frontend](http://nada.com)
+
+
+
 ## ✒️ Autores
-- **Backend**:
+- **Backend**: 
 - **Frontend**:
 - **Integracion**:
 
