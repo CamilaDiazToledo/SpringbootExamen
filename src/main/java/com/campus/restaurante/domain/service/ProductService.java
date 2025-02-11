@@ -2,11 +2,16 @@
 package com.campus.restaurante.domain.service;
 
 
+import com.campus.restaurante.dto.CreateProductDTO;
 import com.campus.restaurante.dto.ProductsDTO;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 public interface ProductService {
-    ResponseEntity<ProductsDTO> createProduct(String name, Double price, String details);
+    ResponseEntity<CreateProductDTO> createProduct(CreateProductDTO createProductDTO);
     Boolean updatePriceDescription(Long id, String details,double price);
+
+    List<ProductsDTO> getAllUsers();
     
 }

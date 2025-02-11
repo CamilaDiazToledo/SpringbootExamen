@@ -4,15 +4,22 @@ package com.campus.restaurante.domain.service;
 
 import com.campus.restaurante.domain.repository.AdminRepository;
 import com.campus.restaurante.domain.repository.ProductRepository;
+import com.campus.restaurante.dto.CreateProductDTO;
 import com.campus.restaurante.dto.ProductsDTO;
+import com.campus.restaurante.dto.UserDto;
 import com.campus.restaurante.persistence.entity.Admin;
 import com.campus.restaurante.persistence.entity.Products;
+import com.campus.restaurante.persistence.entity.Users;
+import com.campus.restaurante.web.exceptions.DataInUseException;
+import com.campus.restaurante.web.exceptions.NotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -31,12 +38,14 @@ public class ProductServiceImpl implements ProductService{
     //CREATE
     @Transactional
     @Override
-    public ResponseEntity<ProductsDTO> createProduct(String name, Double price, String details) {
-        Products product = new Products(name, price, details);
+    public ResponseEntity<CreateProductDTO> createProduct(CreateProductDTO createProductDTO ) {
+
+        Products product = Products.fromDTOCreate(createProductDTO);
         product = productRepository.save(product);
-        ProductsDTO productsDTO = product.toDTO();
-        return ResponseEntity.ok(productsDTO);
+        return ResponseEntity.ok(product.toDTOCreate());
     }
+
+
 
     //UPDATE
     @Transactional
@@ -56,6 +65,22 @@ public class ProductServiceImpl implements ProductService{
             System.out.println("product with this id " + id + " does not exist.");
             return false;
         }
+    }
+
+
+    //GET.........................................................................
+    //todos por idPost
+    @Transactional
+    @Override
+    public List<ProductsDTO> getAllUsers() {
+
+        List<Products> users = productRepository.findAll();
+        if (users.isEmpty()) {
+            throw new NotFoundException("No users found");
+        }
+        return users.stream()
+                .map(Products::toDTO)
+                .collect(Collectors.toList());
     }
 
 
