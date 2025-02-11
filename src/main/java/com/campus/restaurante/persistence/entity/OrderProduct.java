@@ -4,9 +4,7 @@
  */
 package com.campus.restaurante.persistence.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class OrderProduct {
