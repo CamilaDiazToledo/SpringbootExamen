@@ -22,6 +22,12 @@ Este software esta desarrollado con un stack tecnologico solido que garantiza su
 - **Base de datos:** 🗃️ MySQL, optimizada para manejar múltiples interacciones y datos en tiempo real.
 - **Frontend:** 🎨 HTML, CSS, React para ofrecer una experiencia de usuario fluida e intuitiva.
 - **Herramientas de desarrollo:** 🖥️ NetBeans como entorno de desarrollo y 🖥️Git para el control de versiones y colaboración.
+### 📊 Diagrama UML
+
+
+![Diagrama UML]()
+
+
 
 ## 📥 Instalación y configuración
 Si deseas ejecutar el  en tu entorno local, sigue estos pasos detallados:
@@ -30,8 +36,8 @@ Si deseas ejecutar el  en tu entorno local, sigue estos pasos detallados:
    ```sh
    git clone https://github.com/CamilaDiazToledo/SpringbootExamen.git
    ```
-2. 📂 Importar el proyecto en NetBeans o cualquier IDE compatible con Spring Boot.
-3. ⚙️ Configurar la base de datos en el archivo `application.properties`, asegurándote de establecer las credenciales correctas de MySQL.
+2.  Importar el proyecto en NetBeans o cualquier IDE compatible con Spring Boot.
+3.  Configurar la base de datos en el archivo `application.properties`, asegurándote de establecer las credenciales correctas de MySQL.
 4. ▶️ Ejecutar el backend con el siguiente comando en la terminal:
    ```sh
    mvn spring-boot:run
