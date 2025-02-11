@@ -20,34 +20,34 @@ public class ProductServiceImpl implements ProductService{
     }
 
     //CREATE
-    @Transactional
-    @Override
-    public ResponseEntity<ProductsDTO> createProduct(String name, Double price, String details) {
-        Products product = new Products(name, price, details);
-        product = productRepository.save(product);
-        ProductsDTO productsDTO = product.toDTO();
-        return ResponseEntity.ok(productsDTO);
-    }
-
-    //UPDATE
-    @Transactional
-    @Override
-    public Boolean updateBiography(String details, Double price) {
-        Optional<Users> userOpt = userRepositorty.findByEmail(email);
-
-        if (userOpt.isPresent()) {
-            Users user = userOpt.get();
-            user.setBiography(biography);
-            user.setUpdatedAt(new Date());
-
-            userRepositorty.save(user);
-            System.out.println("biography profile updated.");
-            return true;
-        } else {
-            System.out.println("User with this email " + email + " does not exist.");
-            return false;
-        }
-    }
+//    @Transactional
+//    @Override
+//    public ResponseEntity<ProductsDTO> createProduct(String name, Double price, String details) {
+//        Products product = new Products(name, price, details);
+//        product = productRepository.save(product);
+//        ProductsDTO productsDTO = product.toDTO();
+//        return ResponseEntity.ok(productsDTO);
+//    }
+//
+//    //UPDATE
+//    @Transactional
+//    @Override
+//    public Boolean updateBiography(String details, Double price) {
+//        Optional<Users> userOpt = userRepositorty.findByEmail(email);
+//
+//        if (userOpt.isPresent()) {
+//            Users user = userOpt.get();
+//            user.setBiography(biography);
+//            user.setUpdatedAt(new Date());
+//
+//            userRepositorty.save(user);
+//            System.out.println("biography profile updated.");
+//            return true;
+//        } else {
+//            System.out.println("User with this email " + email + " does not exist.");
+//            return false;
+//        }
+//    }
 }
 
 
