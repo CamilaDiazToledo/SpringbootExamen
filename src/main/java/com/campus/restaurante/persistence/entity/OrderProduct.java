@@ -25,7 +25,7 @@ public class OrderProduct {
     private int quantity;
 
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "orderProduct", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Products> products = new ArrayList<>();
     //------------------CONTRUCTORES
 

@@ -2,14 +2,19 @@ package com.campus.restaurante.web.controller;
 
 import com.campus.restaurante.domain.repository.UserRepository;
 import com.campus.restaurante.domain.security.JWTAuthtenticationConfig;
+import com.campus.restaurante.domain.service.UserServiceImpl;
 import com.campus.restaurante.dto.CreateUserDto;
 import com.campus.restaurante.dto.LoginDto;
 import com.campus.restaurante.dto.UserDto;
 import com.campus.restaurante.persistence.entity.Users;
+import com.campus.restaurante.web.exceptions.ActionNotAllowed;
+import com.campus.restaurante.web.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 

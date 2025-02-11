@@ -114,46 +114,34 @@ public class Users {
 
     // ----------------- DTOS
 
-//    public CreateUserDto toDTOCreate() {
-//        CreateUserDto createUserDTO = new CreateUserDto();
-//        createUserDTO.setName(this.name);
-//        createUserDTO.setEmail(this.email);
-//        createUserDTO.setPassword(this.password);
-//        createUserDTO.setUserName(this.userName);
-//        return createUserDTO;
-//
-//    }
-//
-//    public  static  Users fromDTOCreate( CreateUserDto createUserDTO){
-//        Users user = new Users();
-//        user.setName(createUserDTO.getName());
-//        user.setUserName(createUserDTO.getUserName());
-//        user.setEmail(createUserDTO.getEmail());
-//        user.setPassword(createUserDTO.getPassword());
-//        user.setActive(Boolean.TRUE);
-//        user.setCreationDate(new Date());
-//        user.setBiography("New Biography");
-//
-//        return  user;
-//    }
-//
-//    public UserDto toDTO() {
-//        UserDto usersDTO = new UserDto();
-//        usersDTO.setBiography(this.biography);
-//        usersDTO.setCreationDate(this.creationDate);
-//        usersDTO.setUpdatedAt(this.updatedAt);
-//        usersDTO.setName(this.name);
-//        usersDTO.setUserName(this.userName);
-//        usersDTO.setEmail(this.email);
-//        usersDTO.setPhoto(this.photo);
-//        usersDTO.setLastLogin(this.lastLogin);
-//        usersDTO.setActive(this.active);
-//        usersDTO.setUserName(this.userName);
-//        usersDTO.setFriend(Boolean.FALSE);
-//        return usersDTO;
-//
-//
-//    }
+    public CreateUserDto toDTOCreate() {
+        CreateUserDto createUserDTO = new CreateUserDto();
+        createUserDTO.setName(this.name);
+        createUserDTO.setEmail(this.email);
+        createUserDTO.setPassword(this.password);
+        return createUserDTO;
+
+    }
+
+    public  static  Users fromDTOCreate( CreateUserDto createUserDTO){
+        Users user = new Users();
+        user.setName(createUserDTO.getName());
+        user.setEmail(createUserDTO.getEmail());
+        user.setPassword(createUserDTO.getPassword());
+        return  user;
+    }
+
+    public UserDto toDTO() {
+        UserDto usersDTO = new UserDto();
+
+        usersDTO.setName(this.name);
+
+        usersDTO.setEmail(this.email);
+
+        return usersDTO;
+
+
+    }
 
 
 }

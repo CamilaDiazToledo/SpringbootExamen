@@ -3,7 +3,7 @@ package com.campus.restaurante.dto;
 public class CreateUserDto {
 
     private String name;
-    private String userName;
+
     private String email;
     private String password;
 
@@ -11,9 +11,8 @@ public class CreateUserDto {
     public CreateUserDto() {
     }
 
-    public CreateUserDto(String name, String userName, String email, String password) {
+    public CreateUserDto(String name, String email, String password) {
         this.name = name;
-        this.userName = userName;
         this.email = email;
         this.password = password;
     }
@@ -26,13 +25,7 @@ public class CreateUserDto {
         this.name = name;
     }
 
-    public String getUserName() {
-        return userName;
-    }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getEmail() {
         return email;
@@ -54,12 +47,6 @@ public class CreateUserDto {
 
 
 
-    @Override
-    public String toString() {
-        return "CreateUserDTO{" + "name=" + name +
-                ", userName=" + userName +
-                ", email=" + email +
-                ", password=" + password + '}';
-    }
+
 
 }
