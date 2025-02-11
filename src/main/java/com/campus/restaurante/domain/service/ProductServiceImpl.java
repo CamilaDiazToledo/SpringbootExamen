@@ -72,7 +72,7 @@ public class ProductServiceImpl implements ProductService{
     //todos por idPost
     @Transactional
     @Override
-    public List<ProductsDTO> getAllUsers() {
+    public List<ProductsDTO> getAllProducts() {
 
         List<Products> users = productRepository.findAll();
         if (users.isEmpty()) {

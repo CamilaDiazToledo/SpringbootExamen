@@ -12,6 +12,6 @@ public interface ProductService {
     ResponseEntity<CreateProductDTO> createProduct(CreateProductDTO createProductDTO);
     Boolean updatePriceDescription(Long id, String details,double price);
 
-    List<ProductsDTO> getAllUsers();
+    List<ProductsDTO> getAllProducts();
     
 }
