@@ -6,6 +6,9 @@ package com.campus.restaurante.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class OrderProduct {
     
@@ -13,9 +16,7 @@ public class OrderProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idOrdersProducts;
     
-    @ManyToOne
-    @JoinColumn(name = "idProduct")
-    private Products product;
+
     
     @ManyToOne
     @JoinColumn(name = "idOrder")
@@ -23,13 +24,21 @@ public class OrderProduct {
     
     private int quantity;
 
-    public OrderProduct(Long idOrdersProducts, Products product, Orders order, int quantity) {
-        this.idOrdersProducts = idOrdersProducts;
-        this.product = product;
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Products> products = new ArrayList<>();
+    //------------------CONTRUCTORES
+
+
+    public OrderProduct() {
+    }
+
+    public OrderProduct(Orders order, int quantity) {
         this.order = order;
         this.quantity = quantity;
     }
 
+    // ----------------- GETTER & SETTER
     public Long getIdOrdersProducts() {
         return idOrdersProducts;
     }
@@ -38,13 +47,7 @@ public class OrderProduct {
         this.idOrdersProducts = idOrdersProducts;
     }
 
-    public Products getProduct() {
-        return product;
-    }
 
-    public void setProduct(Products product) {
-        this.product = product;
-    }
 
     public Orders getOrder() {
         return order;
@@ -62,4 +65,24 @@ public class OrderProduct {
         this.quantity = quantity;
     }
 
+
+    public List<Products> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Products> products) {
+        this.products = products;
+    }
+
+    // ----------------- LIST FIXED
+    //ORDERS
+    public void addPost(Products product) {
+        this.products.add(product);
+        product.setOrderProduct(this);
+    }
+
+    public void removePost(Products product){
+        this.products.remove(product);
+        product.setOrderProduct(null);
+    }
 }

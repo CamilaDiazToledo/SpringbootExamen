@@ -4,10 +4,7 @@
  */
 package com.campus.restaurante.persistence.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Products {
@@ -20,12 +17,21 @@ public class Products {
     private Double price;
     private String details;
 
-    public Products(Long idProduct, String name, Double price, String details) {
-        this.idProduct = idProduct;
+    @ManyToOne
+    private OrderProduct orderProduct;
+    //------------------CONTRUCTORES
+
+    public Products() {
+    }
+
+    public Products(String name, Double price, String details) {
         this.name = name;
         this.price = price;
         this.details = details;
     }
+
+    // ----------------- GETTER & SETTER
+
 
     public Long getIdProduct() {
         return idProduct;
@@ -58,6 +64,12 @@ public class Products {
     public void setDetails(String details) {
         this.details = details;
     }
-    
-    
+
+    public OrderProduct getOrderProduct() {
+        return orderProduct;
+    }
+
+    public void setOrderProduct(OrderProduct orderProduct) {
+        this.orderProduct = orderProduct;
+    }
 }
